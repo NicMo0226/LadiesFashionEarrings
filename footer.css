@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+/* CSS Document */
+#footer {
+	height: 19em;
+	background-color: #a79f9f;
+}
+
+.footernav {
+	font-family: 'Josefin Slab', serif;
+	font-style: bold;
+	font-size: 1.2em;
+	padding-top: 4em;
+	color: #202020;
+	list-style: none;
+	text-decoration: none;
+}
+
+
+
+#smedia {
+
+	padding-top: 6em;
+
+}
+
+#icon {
+	width: 3.5em;
+	padding-left: .5em;
+	margin-left: 1.8em;
+
+}
+
+p {
+	padding-top: 4em;
+	font-family: 'Josefin Slab', serif;
+	text-align: center;
+	font-style: bold;
+	font-size: .8em;
+}
+
+#cpyr {
+	padding-top: 2em;
+
+}
+
+
+
+textarea {
+	width: 80%;
+
+	padding-bottom: .5em;
+	margin-left: 2em;
+}
+
+.center {
+	margin-left: 2EM;
+}
+
+
+.contact {
+	padding-left: 14em;
+
+}
+
+.form-group {
+	align-items: center;
+	justify-content: center;
+	align-items: center;
+
+}

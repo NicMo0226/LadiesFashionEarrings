@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+	body {
+background-color: #a79f9f;
+	}
+#header {
+	background-color: #a79f9f;
+
+	height: 12em;
+	padding-top:1em;
+padding-bottom: 0 !important;
+}
+#logo {
+	padding-left: .5em;
+}
+#cart {
+	font-size: 2.5em;
+	color: white;
+	}
+.navbar-light  {
+	background-color:  #a79f9f;
+	padding-bottom: 0 !important;
+}
+#catimg {
+padding-top: .5em;
+}
+#myNavbar {
+	font-family: 'Josefin Slab', serif;
+	font-style: bold;
+	font-size: 1.6em;
+	text-align: center;
+	color: #202020;
+	
+} 
+ a {
+ 	color: #202020;
+ 	width: 5.2em;
+ }
+ .active {
+padding-left: .5em;
+ 	padding-right: .5em;
+ }
+.active a {
+ 	border: 3px solid white;
+box-shadow: rgb(154,47,252) 10px 1px  10px;
+ }
+ .size {
+ 	padding-bottom:0 !important;
+ }

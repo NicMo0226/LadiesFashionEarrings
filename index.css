@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+background-color: white !important;
+overflow-x: hidden;
+font-family: 'Josefin Slab', serif;
+font-size: 3em;
+}
+.container {
+  font-family: 'Josefin Slab', serif;
+}
+#myCarousel {
+  min-width: 100%;
+}
+
+h2, h3 {
+  font-family: 'Josefin Slab', serif;
+}
+  .carousel-inner{
+      min-width: 100%;
+     padding-top: 0 !important;
+     margin-top:  0 !important;
+  }
+  .item{
+   min-width: 100%;
+  	
+ padding-left: 0 !important;
+ padding-right: 0 !important;
+  padding-top: 0 !important;
+  }
+  #first {
+ height: 18em;
+ background-color: white;
+ min-width: 100%;
+ padding-left: 0 !important;
+ padding-right: 0 !important;
+ margin-left: 0% !important;
+ margin-right: 0% !important;
+  }
+
+ #seperate {
+
+  border-bottom: 1px solid grey;
+ }
+ p {
+  padding-top: 0 !important;
+  margin-left: 0 !important;
+ }
+#list {
+  padding-top: 3em;
+  margin-bottom: 1em;
+}

@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+.main {
+	height: 40em;
+	background-color: white;
+	font-family: 'Josefin Slab', serif;
+}
+
+#imgplace {
+	margin-top: 6em;
+	margin-bottom: 3em;
+
+	width: 20em;
+	border: 4px solid #b3b3b3;
+	-webkit-box-shadow: 5px 5px 4px solid #9a2ffc;
+	box-shadow: 5px 5px 4px #9a2ffc;
+	margin: 0 auto;
+}
+
+#prodrow,
+.row {
+	margin-bottom: 1em !important;
+	margin-top: 1em !important;
+}
+
+.prdimg {
+	float: right;
+}
+
+#image {
+
+	padding-top: 4em;
+}
+
+.more {
+	font-size: .6em
+}
+
+.container {
+
+	padding-top: 5em;
+	padding-bottom: 5em;
+}
+
+#poptions {
+
+	font-size: .9em;
+	padding-top: 2.5em;
+}
+
+#optionsbut {
+	width: 7em;
+}
+
+#pquantity {
+	padding-top: .5em;
+}
+
+#quantitybut {
+	width: 2.5em;
+
+}
+
+#cartbtn {
+	margin-top: 1em;
+	color: white;
+	background-color: #9a2ffc;
+	border: 4px solid #b3b3b3;
+}

@@ -1,0 +1,167 @@
+/* CSS Document */
+
+body {
+	max-height: 100%;
+	min-height: 100%;
+	background-color: white !important;
+}
+
+a {
+	text-decoration: none;
+	color: lightslategray;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+form {
+	text-align: center;
+}
+
+
+@media (max-width:768px) {
+
+	body {
+		margin: 0;
+		padding: 0;
+		min-height: 100%;
+		background-color: #000;
+	}
+
+	.login-box {
+		position: relative;
+		background-color: #494949;
+		border-radius: 25px;
+		opacity: 0.98;
+		padding: 20px;
+	}
+
+	h1 {
+		padding-top: 1em;
+	}
+
+	.reg-box {
+		position: relative;
+		background-color: #494949 !important;
+		border: 1px solid #EDEDED;
+		border-radius: 10px;
+		opacity: 0.98;
+		padding: 5px;
+	}
+
+	.reg-header {
+		text-align: center;
+		color: slategrey;
+	}
+
+	.yujin-header {
+		border-radius: 10px;
+	}
+
+	input[type="submit"] {
+		background-color: #981fe9;
+
+		border-radius: 3px;
+		margin: 5px 0px 10px 0px;
+		padding: 5px 10px 5px 10px;
+		color: rgb(126, 21, 212);
+		text-shadow: rgb(172, 115, 226) 0.5px 0.5px 0px;
+	}
+
+	input[type="submit"]:hover {
+		background-color: #7434bd;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		border: 1px solid #e5e5e5;
+		margin-top: 5px;
+		height: 35px;
+		margin-bottom: 10px;
+		padding-left: 5px;
+		width: 70%;
+	}
+
+	input[type="text"]:hover,
+	input[type="email"]:hover,
+	input[type="password"]:hover {
+		border-color: #6834bd;
+	}
+
+	#second {
+		display: none;
+	}
+
+	.reg-logo {
+		margin: -5px 0px 20px 0px;
+		width: 50%;
+		margin: 0 auto;
+	}
+
+	.space-div {
+		min-height: 25em;
+		max-height: 30em;
+	}
+}
+
+@media (min-width:769px) {
+
+
+	.login-box {
+		position: relative;
+
+		border-radius: 10px;
+		opacity: 0.98;
+		padding: 20px;
+	}
+
+	.reg-box {
+		position: relative;
+
+		border-radius: 10px;
+		opacity: 0.98;
+		padding: 20px;
+		top: 100px;
+	}
+
+	.reg-header {
+		text-align: center;
+
+	}
+
+	input[type="submit"] {
+
+		border-radius: 3px;
+		margin: 5px 0px 10px 0px;
+		padding: 5px 10px 5px 10px;
+
+	}
+
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+
+		margin-top: 5px;
+		height: 35px;
+		margin-bottom: 10px;
+		padding-left: 5px;
+		width: 70%;
+	}
+
+
+
+	#second {
+		display: none;
+	}
+
+	.reg-logo {
+		margin-top: 15px;
+	}
+
+	.space-div {
+		height: 20%;
+	}
+}
