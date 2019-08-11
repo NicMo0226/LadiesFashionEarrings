@@ -14,7 +14,21 @@
     <link href="index.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Slab">
+    <script>
+    var main = $('div.main');
+    main.each(function() {
+        var mar = $(this),
+            indent = mar.width();
+        mar.main = function() {
+            indent--;
+            mar.css('text-indent', indent);
+            if (indent < -1 * mar.children('div.maintext').width()) {
+                indent = mar.width();
+            }
+        };
+        mar.data('interval', setInterval(mar.main, 1000 / 60));
+    });
+    </script>
 </head>
 
 <body>
@@ -66,9 +80,7 @@
                             <div class="item">
                                 <img src="images/slider8.jpg" alt="jewellery">
                             </div>
-                            <div class="item">
-                                <img src="images/slider8.jpg" alt="jewellery">
-                            </div>
+
                         </div>
                         <!-- Left and right controls -->
                         <a class="left carousel-control" href="#myCarousel" role="button">
@@ -79,6 +91,20 @@
                             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+
+                    <div class="main">
+                        <p class="maintext">Sparkles and Shines provides gorgeous jewellery at affordable prices, and is guaranteed to
+                            make
+                            you
+                            stand out from the crowd!! Click on a category to find your perfect product today.</p>
+                        </p>
                     </div>
                 </div>
             </div>

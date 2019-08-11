@@ -37,12 +37,12 @@ include('inc/dbconnect.inc.php');
         <link rel="stylesheet" href="nav.css">
         <link rel="stylesheet" href="product.css">
         <link rel="stylesheet" href="footer.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Slab">
+
         <style>
         body {
             background-color: white !important;
             overflow-x: hidden;
-            font-family: 'Josefin Slab', serif;
+            font-family: 'Josefin Slab', serif !important;
             font-size: 3em;
         }
 
@@ -51,8 +51,16 @@ include('inc/dbconnect.inc.php');
         }
 
         h2,
+        h4,
+        h5,
+        p {
+            font-family: 'Josefin Slab', serif;
+            padding-left: 1em;
+        }
+
         h3 {
             font-family: 'Josefin Slab', serif;
+            padding-left: .6em;
         }
 
         .carousel-inner {
@@ -116,7 +124,7 @@ include('inc/dbconnect.inc.php');
                 var randNum = Math.floor(Math.random() * 1000000000);
 
                 $.ajax({
-                    url: "mng_cart.php?rand=" + randNum,
+                    url: "mng/mng_cart.php?rand=" + randNum,
                     dataType: 'text',
                     type: 'POST',
                     data: 'action=add&product_id=' +
@@ -154,10 +162,10 @@ while($row=mysqli_fetch_array($result)) {
                             <img class="prodimage" src="<?php echo $row['product_image'];?>" width="200" alt="product-thumb"><br />
                         </div>
                         <div class="col-sm-8 col-xl-8 col-md-8 col-lg-8 col-xl-8 ">
-                            <h2> <?php echo $row ['product_name']; ?></a><br><br>
-                                <h2>£ <?php echo  $row ['product_price']; ?></h2>
-                                <a href="cart.php" id="addtocartlink" alt="<?php echo $row ['product_id']; ?>">Add to Cart</a>
-                                <?php    
+                            <h3> <?php echo $row ['product_name']; ?></a></h3><br><br>
+                            <h4>£ <?php echo  $row ['product_price']; ?></h4><br>
+                            <a href="cart.php" id="addtocartlink" alt="<?php echo $row ['product_id']; ?>">Add to Cart</a>
+                            <?php    
 } // end while loop
 ?>
                         </div>

@@ -1,4 +1,3 @@
-<!doctype>
 <html>
 
     <head>
@@ -13,9 +12,7 @@
         <link rel="stylesheet" href="header.css">
         <link rel="stylesheet" href="footer.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Slab">
-        <?php 
-include ("inc/scriptpackage.inc.php");
- ?>
+
     </head>
     <style>
     body {
@@ -26,7 +23,6 @@ include ("inc/scriptpackage.inc.php");
         margin: 0 auto;
         text-align: center;
         padding-top: 2em;
-
     }
 
     #form {
@@ -34,21 +30,35 @@ include ("inc/scriptpackage.inc.php");
         width: 20em;
     }
     </style>
+    <?php
+    include ("inc/nav.inc.php");
+    ?>
 
     <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 col-xl-8 col-md-8 col-lg-8 col-xl-8 col-md-offset-2">
 
-        <h1>Insert Product</h1>
+                    <h1>Insert Product</h1>
 
-        <form method="post" id="form" enctype="multipart/form-data" action="mng_content.php">
-            <input type="hidden" name="action" value="insert" /><br />
-            <input type="text" name="p_name" placeholder="Name" /><br />
-            <input type="text" name="p_category" placeholder="Category" /><br />
-            <input type="text" name="p_price" placeholder="Price" /><br />
-            <textarea name="p_desc" placeholder="Description"></textarea><br />
-            <input type="file" name="thumb" placeholder="Thumbnail" /><br />
-            <input type="file" name="main" placeholder="Main Image" /> <br />
-            <input type="submit" value="Insert Product" />
-        </form>
+                    <form method="post" id="form" enctype="multipart/form-data" action="mng_content.php">
+                        <input type="hidden" name="action" value="insert" /><br />
+                        <input type="text" name="product_name" placeholder="Name" /><br />
+                        <input type="text" name="product_category" placeholder="Category" /><br />
+                        <input type="text" name="product_price" placeholder="Price" /><br />
+                        <textarea name="product_description" placeholder="Description"></textarea><br />
+                        <input type="file" name="thumb_image" placeholder="Thumbnail" /><br />
+                        <input type="file" name="product_image" placeholder="Main Image" /> <br />
+                        <input type="submit" value="Insert Product" />
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
     </body>
+    <?php
+    include ("inc/footer.inc.php");
+    ?>
 
 </html>

@@ -23,7 +23,7 @@ if($_GET['action']=='update'){
 		
 	}  //end for each
 	$_SESSION['cart']=$newcart;
-	header('location:cart.php');
+	header('location:../cart.php');
 }
 
 if($_GET['action']=='delete'){
@@ -45,7 +45,7 @@ if($_GET['action']=='delete'){
 		} // otherwise item doesn't get added- hence deleted 
 	}
 	$_SESSION['cart']=$newcart;
-	header('location: cart.php');
+	header('location: ../cart.php');
 }
 
 if ($_POST['action']=='add') {   //if action is add

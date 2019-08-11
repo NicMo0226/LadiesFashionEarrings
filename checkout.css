@@ -70,7 +70,6 @@ p,
 a,
 .btn {
 	font-family: 'Roboto Slab', serif;
-
 }
 
 th,
@@ -78,14 +77,18 @@ td {
 	text-align: left;
 }
 
-.btn {
-	font-size: .8em !important;
+td {
+	font-size: .9em;
 }
 
-.checkoutbtn {
+.checkoutbtn,
+.cartbtn {
 	border: 1px lightgray !important;
 	background-color: lightgrey !important;
-	font-size: .8em !important;
+	font-size: .6em !important;
+	width: 7em;
+	text-align: center;
+	padding: .4em !important;
 }
 
 .form-group {

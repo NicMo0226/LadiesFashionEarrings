@@ -2,6 +2,7 @@
 session_start(); //creates session
 include("dbconnect.inc.php");
 include("cartdisplay.inc.php");
+include("header.inc.php");
 
 //get searchterm from url / form submission
 $navResults= mysqli_query ($dbconnect,
@@ -20,22 +21,23 @@ body {
     font-size: 1.2em;
 }
 
-#top {
-    background-color: #a79f9f;
 
-}
 
 #header {
     height: 5em;
     margin-bottom: 0;
     margin-top: 0;
-    background-color: #a79f9f;
+
     padding-bottom: 0 !important;
     padding-top: 0 !important;
 }
 
+#items {
+    margin-top: .5em;
+}
+
 .navbar-light {
-    background-color: #a79f9f;
+    background-color: #d3cecee5;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
 }
@@ -67,15 +69,16 @@ a {
 .lilink {
     display: inline;
     text-decoration: none;
-    border: 2px solid white;
-    box-shadow: rgb(154, 47, 252) 10px 1px 10px;
+    border: 1px solid white;
+    box-shadow: rgb(76, 0, 255) 5px 1px 5px;
     float: right;
-    padding: .5em;
-    margin: 1em;
+    padding: .25em;
+    margin: .25em;
 }
 
 .lilinks {
     text-align: center;
+    font-size: .7em;
 }
 
 #search {
@@ -89,8 +92,6 @@ a {
     position: relative;
     font-family: 'Josefin Slab', serif;
     font-size: .8em;
-    font-style: italic;
-    font-weight: 700;
     float: right;
 
 }
@@ -130,8 +131,18 @@ a {
     font-size: 1.4em;
 }
 
-li {
-    width: 7em;
+.icon {
+    display: inline;
+    text-decoration: none;
+    float: right;
+    position: relative;
+    right: 23em;
+    top: .5em;
+}
+
+
+a.home {
+    left: 45em;
 }
 
 #searches {
@@ -150,8 +161,11 @@ li {
     padding-top: 1em;
 }
 </style>
-
+<link rel="stylesheet" href="header.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Slab">
 <div class="container-fluid" id="top">
 
     <div class="row">
@@ -161,13 +175,22 @@ li {
         <div class="col-sm-9">
             <div class="row">
                 <div class="col-sm-3  col-md-3 col-lg-3  col-xl-3">
-                    &nbsp;
+
                 </div>
                 <div class="col-sm-3  col-md-3 col-lg-3  col-xl-3">
-                    <a href="register.php" class="log">Register</a>
-                    <a href="register.php" class="log">Login</a>
-                </div>
+                    <?php
+                    session_start();
+                    if(!isset($_SESSION['user_username']) && empty($_SESSION['user_username']))
+                    {
+                        echo '<a class="log" href="register.php"></a>Log In</a>';
+                    }   
+                    else 
+                    {
+                        echo  '<p class="welc">Welcome </p>', $_SESSION['user_username'] , '<a class="welc" href="log_out.php">Log Out</a>';
+                    }
+                    ?>
 
+                </div>
                 <div class="col-sm-5  col-md-5 col-lg-5  col-xl-5">
                     <?php 
                     include ("search.inc.php");
@@ -183,10 +206,13 @@ li {
             </div>
             <div class="row">
                 <nav class="navbar navbar-light">
-                    <ul id="items">
-                        <li class="lilink"><a class="lilinks" href="index.php">Home</a>
 
-                            <?php 
+                    <ul id="items">
+                        <li class="icon"><a class="home" href="index.php"><i class="material-icons">
+                                    home
+                                </i></a></li>
+
+                        <?php 
                                 while($navRow=mysqli_fetch_array($navResults)) {
                                 ?>
                         <li class="lilink text-center" id="items">
@@ -198,7 +224,7 @@ li {
                         <?php 
                                 }
                             ?>
-                        </li>
+
                     </ul>
                 </nav>
             </div>

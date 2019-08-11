@@ -1,49 +1,60 @@
 @charset "utf-8";
+
 /* CSS Document */
-	body {
-background-color: #a79f9f;
-	}
+body {
+	background-color: #d3cecee5;
+}
+
 #header {
-	background-color: #a79f9f;
+	background-color: #d3cecee5;
 
 	height: 12em;
-	padding-top:1em;
-padding-bottom: 0 !important;
+	padding-top: 1em;
+	padding-bottom: 0 !important;
 }
+
 #logo {
 	padding-left: .5em;
 }
+
 #cart {
 	font-size: 2.5em;
 	color: white;
-	}
-.navbar-light  {
-	background-color:  #a79f9f;
+}
+
+.navbar-light {
+	background-color: #d3cecee5;
 	padding-bottom: 0 !important;
 }
+
 #catimg {
-padding-top: .5em;
+	padding-top: .5em;
 }
+
 #myNavbar {
 	font-family: 'Josefin Slab', serif;
 	font-style: bold;
-	font-size: 1.6em;
+	font-size: 1.2em;
 	text-align: center;
 	color: #202020;
-	
-} 
- a {
- 	color: #202020;
- 	width: 5.2em;
- }
- .active {
-padding-left: .5em;
- 	padding-right: .5em;
- }
+
+}
+
+a {
+	color: #202020;
+	width: 5.2em;
+}
+
+.active {
+	padding-left: .5em;
+	padding-right: .5em;
+}
+
 .active a navbox {
- 	border: 3px solid white;
-box-shadow: rgb(154,47,252) 10px 1px  10px;
- }
- .size {
- 	padding-bottom:0 !important;
- }
+	border: 3px solid white;
+	box-shadow: rgb(154, 47, 252) 10px 1px 10px;
+}
+
+.size {
+	padding-bottom: 0 !important;
+}

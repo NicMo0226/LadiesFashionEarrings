@@ -34,7 +34,7 @@ session_start();
             <div class="row">
                 <div class="col-sm-8 col-xl-8 col-md-8 col-lg-8 col-xl-8 col-md-offset-2">
                     <h1>Checkout Stage: 1</h1>
-                    <form method="post" action="mng_checkout.php">
+                    <form method="post" action="mng/mng_checkout.php">
                         <input class="chkform" type="hidden" name="stage" value="1">
                         <input class="chkform" type="text" name="fname" placeholder="First Name(s)"><br />
                         <input class="chkform" type="text" name="sname" placeholder="Surname"><br />
@@ -47,7 +47,7 @@ session_start();
                         <input class="chkform" type="text" name="pcode" placeholder="Post Code"><br />
 
 
-                        <a class="btn" href="checkout2.php" role="button">Submit</a>
+                        <a class="btn" href="checkout3.php" role="button">Submit</a>
 
                     </form>
                 </div>

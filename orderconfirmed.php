@@ -126,7 +126,7 @@ $mailSent = @mail($to,$subject,$message,$headers);
         <?php 
 include ("inc/scriptpackage.inc.php");
  ?>
-        <title>Untitled Document</title>
+        <title>Sparkles and Shines</title>
     </head>
 
     <body>
@@ -138,19 +138,31 @@ include ("inc/scriptpackage.inc.php");
  	
 ?>
         <?php include ("inc/nav.inc.php"); ?>
-        <h1>Your order has been placed with Jasper Man <br />
-            Thank you for shopping with us today!</h1>
-        <?php 
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 col-xl-8 col-md-8 col-lg-8 col-xl-8 col-md-offset-2">
+                    <br /><br />
+                    <h4>Your order has been placed with Sparkles and Shines<br /><br />
+                        <i> Guaranteed to make you stand out from the crowd!! </i><br /> <br /><br />
+                        Thank you for shopping with us today!</h4><br /><br />
+                    <div class="spacer" style="padding-bottom: 3em;">
+                        <?php 
 if ($mailSent) {
 	echo "A confirmation e-mail has been sent to you, please check your inbox!";
-	echo "<p>Thank you for shopping with Sparkles and Shine <br/>
+	echo "<p>Thank you for shopping with Sparkles and Shines <br/>
 			Guaranteed to make you stand out from the crowd!!</p>";
 	$_SESSION['cart']="";
 } else {
 	echo "There is a problem with your confirmation e-mail, please refresh";
 }
  ?>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </body>
+    <?php include ("inc/footer.inc.php"); ?>
 
 </html>

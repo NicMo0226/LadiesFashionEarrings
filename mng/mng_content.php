@@ -114,13 +114,13 @@ include("dbconnect.inc.php");
 		 
 	 } //end extension check
 	 if (!$errors) {  //sanitise before entry
-	 	$product_name = mysqli_escape_string($con,
+	 	$product_name = mysqli_escape_string($dbconnect,
 	 					$_POST['product_name']);
-	 	$category_name = mysqli_escape_string($con,
+	 	$category_name = mysqli_escape_string($dbconnect,
 	 					$_POST['product_category']);
-	 	$product_price = mysqli_escape_string($con,
+	 	$product_price = mysqli_escape_string($dbconnect,
 	 					$_POST['product_price']);
-	 		$product_description = nl2br( mysqli_escape_string($con,
+	 		$product_description = nl2br( mysqli_escape_string($dbconnect,
 	 					$_POST['product_description'])); 
 	 		$main ="images/main" . $main;
 	 		$thumb ="images/thumb" . $thumb;
@@ -132,11 +132,11 @@ include("dbconnect.inc.php");
 	 				('{$product_name}','{$category_name}','{$product_price}','{$product_description}','{$thumb_image}','{$product_image}')";
 	 				$insertResult = mysqli_query($dbconnect,$insertSql);
 	 				if ($insertResult) {
-	 					header("location: ../detail.php?id=" . 
+	 					header("location: detail.php?id=" . 
 	 					mysqli_insert_id($dbconnect));
 	 				} else {
 	 					$_SESSION['message']="Insertion failed";
-	 					header("location: ../admin.php");
+	 					header("location: admin.php");
 	 				}
 	 }
  } //end insert

@@ -53,7 +53,7 @@ if($_POST['stage']=="1") {
 			}	else {
 				$_SESSION['message']="Details successful";
 $_SESSION['address_id']=mysqli_insert_id($dbconnect);
-	header("location: checkout2.php");
+	header("location: checkout3.php");
 			}
 		}
 	}

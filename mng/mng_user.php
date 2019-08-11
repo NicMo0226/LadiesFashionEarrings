@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="2; url = http://http://localhost/APACHE/shop/cart.php" />
+
 <?php
 include ("inc/dbconnect.inc.php"); 
     session_start();
@@ -19,9 +21,9 @@ include ("inc/dbconnect.inc.php");
 
      if(!$valid) {    //if not valid
         $_SESSION['message']="Please enter valid information.";
-        header("location: register.php");
+        header("location: ../register.php");
 		} else {
-		//	echo "Valid!";
+			echo "Valid!";
 
 			$userCheck = mysqli_query($dbconnect,
 					"SELECT *
@@ -32,7 +34,7 @@ include ("inc/dbconnect.inc.php");
 			//check username availability
 			if (mysqli_num_rows($userCheck)>0) {
 			 	$_SESSION['message']="Username is taken";
-        		header("location: register.php");
+        header("location: ../register.php");
 			 } else {
 			 	$username = $_POST['r_uname'];
 			 	//hashed password
@@ -51,7 +53,7 @@ include ("inc/dbconnect.inc.php");
 			} else {
 				 $_SESSION['message']="There has been a registration error";
 			}
-				header("location: register.php");
+				header("location: ../register.php");
 			} //end user check
 		} //end validation check
   }//end registration routine
@@ -69,13 +71,12 @@ if($_POST['mode']=="login") {	//if login routine
 
     if (!$valid) { //if not valid
     	?>
-<form class="errorform">
-    <input type="text" name="l_uname" placeholder="uname" /><br />
-    <input type="text" name="l_pword" placeholder="pword" /><br />
-    <input type="submit" value="Login" />
-    <input type="hidden" name="mode" value="login" />
-    <p>Please enter your details</p>
-</form>
+<input type="text" name="l_uname" placeholder="uname" /><br />
+<input type="text" name="l_pword" placeholder="pword" /><br />
+<input type="submit" value="Login" />
+<input type="hidden" name="mode" value="login" />
+<p>Please enter your details</p>
+
 <?php 
     } else {
     		$username = $_POST['l_uname'];
@@ -95,24 +96,27 @@ if($_POST['mode']=="login") {	//if login routine
 			 		while($row=mysqli_fetch_array($login)) { 
 			 			$_SESSION['user_id']=$row['user_id'];
 			 			$_SESSION['user_username']=$row['user_username'];
-			 	$_SESSION['user_level']=$row['user_level'];
+			 		//	$_SESSION['user_level']=$row['user_level'];
 			 			
 			 		}  ?>
 
-
-<p>Welcome to Sparkles AND Shines <?php echo $_SESSION['user_username'] ?> </p>
+<div class="text-center">
+    <p>Welcome to Sparkles and Shines <?php echo $_SESSION['user_username'] ?> <br>
+        You are being redirected to you cart.....
+    </p>
+</div>
 
 
 <?php
 			 	} else {
                      ?>
-<form class="errorform">
-    <input type="text" name="l_uname" placeholder="uname" /><br />
-    <input type="text" name="l_pword" placeholder="pword" /><br />
-    <input type="submit" value="Login" />
-    <input type="hidden" name="mode" value="login" />
-    <p>Username and passwords do not match</p>
-</form>
+
+<input type="text" name="l_uname" placeholder="uname" /><br />
+<input type="text" name="l_pword" placeholder="pword" /><br />
+<input type="submit" value="Login" />
+<input type="hidden" name="mode" value="login" />
+<p>Username and passwords do not match</p>
+
 <?php
 			 	}
 

@@ -1,0 +1,48 @@
+html {
+    font-size: .7em;
+}
+
+#second {
+    display: none;
+}
+
+.errorform {
+    background-color: #d3cecee5;
+    border: 0 !important;
+    opacity: 0.8;
+    margin-top: 7%;
+    padding: 5%;
+}
+
+.egis-header {
+    border-radius: 25px;
+}
+
+.login-box {
+    background-color: #d3cecee5;
+    margin-top: 2em;
+    margin-bottom: 1.7em;
+    border: 20px solid rgba(79, 81, 92, 0.705);
+}
+
+.signup {
+    margin-top: 1em;
+    font-family: 'Roboto Slab', serif;
+    color: #ffff;
+}
+
+a.LoginLink {
+    color: rgb(76, 0, 255);
+    font-family: 'Roboto Slab', serif;
+
+}
+
+input {
+    margin-top: .4em !important;
+    margin-bottom: .4em !important;
+}
+
+.pay {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}

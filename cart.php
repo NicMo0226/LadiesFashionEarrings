@@ -1,6 +1,21 @@
 <?php 
 session_start();
 include ('inc/dbconnect.inc.php');
+//include( 'inc/header.inc.php' );
+
+
+
+$id = $_GET[ 'user_id' ];
+//if users is not logged in return to register.php
+if ( isset( $_SESSION[ 'user_username' ] ) ) {
+	$userLoggedIn = $_SESSION[ 'user_username' ];
+	$user_details_query = mysqli_query( $con, "SELECT * FROM USER WHERE user_username='$userLoggedIn'" ); //fetches users data
+	$user = mysqli_fetch_array( $user_details_query );
+} else {
+	header( "Location: register.php" );
+}
+
+
 //render cart function definition
 function renderCartForm () {
 	global $dbconnect;
@@ -17,8 +32,8 @@ function renderCartForm () {
 		$output[] = '<div class="container-fluid">';
 						$output[] = '<div class="row">';
 						$output[] = '<div class="col-sm-8 col-xl-8 col-md-8 col-lg-8 col-xl-8 col-md-offset-2">';
-						$output[] = ' <h1>Shopping Cart</h1>';
-		$output[] = '<form action="mng_cart.php?action=update"
+						$output[] = ' <h3>Shopping Cart</h3>';
+		$output[] = '<form action="mng/mng_cart.php?action=update"
 						method="post" id="cart">';
 						
 			$output[] = '<table class="table table-bordered table-striped">';
@@ -44,7 +59,7 @@ function renderCartForm () {
 				$output[] = '<td>&pound;'.$cartRow['product_price'] . '</td>';
 				$output[] = '<td ><input type="text" name="qty'.$id.'" value="'.$qty.'" size="2" maxlength="2" ></td>';
 				$output[] = '<td width="100">&pound; '.$cartRow['product_price'] *$qty . '</td>';
-				$output[] = '<td class="textleft"><a href="mng_cart.php?action=delete&id='.$id.'">X</a></td>';
+				$output[] = '<td class="textleft"><a href="mng/mng_cart.php?action=delete&id='.$id.'">X</a></td>';
 				$total += $cartRow['product_price'] * $qty;
 				$output[] = '</tr>';
 				
@@ -61,7 +76,7 @@ function renderCartForm () {
 		
 		$output[] = '<td><input type="submit" class="btn cartbtn" value="Update Cart"><br></td>';
 	$output[] = '<td>Grand Total: <strong>&pound;'.$total.'</strong></td>';
-	$output[] = '<td> <a class="btn checkoutbtn btn-outline-secondary" type="submit" href="checkout1.php" role="button">Go to Checkout</a></td>';
+	$output[] = '<td> <a class="btn checkoutbtn btn-outline-secondary" type="submit" href="checkout1.php" role="button">Checkout</a></td>';
 		
 		$output[] = '</tr>';
 		$output[] = '</table>';
